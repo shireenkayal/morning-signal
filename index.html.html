@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#101a35">
+<meta name="description" content="Morning Signal — a concise AI-powered morning briefing for your schedule, local weather, sports, and the stories that matter.">
+<title>Morning Signal — Your day, in focus.</title>
+<style>
+:root{--navy:#101a35;--ink:#17213c;--muted:#64708b;--cyan:#24d6e8;--gold:#ffc94a;--paper:#f5f7fc;--line:#e7ebf4}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.55 Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif}
+a{color:inherit}.wrap{width:min(1120px,calc(100% - 40px));margin:auto}
+header{background:var(--navy);color:white;overflow:hidden;position:relative}
+header:before{content:"";position:absolute;width:580px;height:580px;border-radius:50%;background:radial-gradient(circle,#1b6e91 0,rgba(36,214,232,.12) 42%,transparent 70%);right:-100px;top:-270px}
+nav{height:82px;display:flex;align-items:center;justify-content:space-between;position:relative;z-index:1}
+.brand{font-weight:850;letter-spacing:-.04em;font-size:1.2rem}.brand span{color:var(--cyan)}
+.navtag{border:1px solid #46516b;border-radius:999px;padding:8px 14px;color:#d9e4fa;font-size:.82rem}
+.hero{position:relative;z-index:1;padding:72px 0 88px;display:grid;grid-template-columns:1.05fr .95fr;gap:54px;align-items:center}
+.eyebrow{color:var(--cyan);font-size:.78rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase}
+h1{font-size:clamp(3rem,6vw,5.2rem);line-height:.99;letter-spacing:-.065em;margin:18px 0 22px;max-width:650px}
+h1 em{font-style:normal;color:var(--cyan)}
+.lede{font-size:1.12rem;color:#c5cee2;max-width:530px}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:13px 19px;border-radius:12px;text-decoration:none;font-weight:750}
+.primary{background:var(--cyan);color:#071629}.secondary{border:1px solid #56617a;color:white}
+.note{font-size:.82rem;color:#aab6cf;margin-top:14px}
+.preview{background:#fff;color:var(--ink);border:1px solid #dce5f2;border-radius:22px;padding:22px;box-shadow:0 25px 80px #050b1e88;transform:rotate(1deg)}
+.preview-top{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line);padding-bottom:16px}
+.preview-top strong{font-size:1.1rem}.time{font-size:.8rem;color:var(--muted)}
+.item{display:grid;grid-template-columns:42px 1fr auto;gap:12px;align-items:center;padding:15px 0;border-bottom:1px solid var(--line)}
+.item:last-child{border:0}.ico{width:40px;height:40px;border-radius:12px;background:#e9faff;display:grid;place-items:center;font-size:1.2rem}
+.item b{display:block;font-size:.92rem}.item small{color:var(--muted)}.arrow{color:#1689a8;font-size:.82rem}
+.preview-foot{background:#f1fbfd;border-radius:12px;padding:12px;margin-top:12px;font-size:.82rem;color:#286174;text-align:center}
+main{padding:76px 0}.section-kicker{color:#1689a8;font-size:.76rem;font-weight:850;letter-spacing:.15em;text-transform:uppercase}
+h2{font-size:clamp(2rem,4vw,3rem);line-height:1.08;letter-spacing:-.045em;margin:10px 0 14px}
+.intro{max-width:650px;color:var(--muted)}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:34px}
+.card{background:white;border:1px solid var(--line);border-radius:18px;padding:23px}
+.card .symbol{font-size:1.6rem}.card h3{margin:12px 0 5px}.card p{margin:0;color:var(--muted);font-size:.93rem}
+.sample{margin-top:64px;background:white;border:1px solid var(--line);border-radius:22px;padding:clamp(22px,4vw,38px)}
+.sample-head{display:flex;justify-content:space-between;gap:16px;align-items:center;flex-wrap:wrap}
+.pill{font-size:.78rem;font-weight:750;background:#e9fbf6;color:#16765f;border-radius:999px;padding:7px 11px}
+.sample-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:22px}
+.sample-box{background:#f7f9fd;border-radius:14px;padding:18px}.sample-box h3{margin:0 0 8px;font-size:1rem}.sample-box p{margin:0;color:var(--muted);font-size:.9rem}
+.disclaimer{font-size:.82rem;color:var(--muted);margin-top:18px}
+footer{background:var(--navy);color:#d5deef;padding:34px 0}
+.foot{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font-size:.86rem}.foot strong{color:white}
+@media(max-width:780px){.hero{grid-template-columns:1fr;padding:55px 0 65px;gap:35px}.preview{transform:none}.grid{grid-template-columns:1fr}.sample-grid{grid-template-columns:1fr}main{padding:55px 0}}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <nav><div class="brand">MORNING <span>SIGNAL</span></div><div class="navtag">Your AI-powered daily briefing</div></nav>
+    <section class="hero">
+      <div>
+        <div class="eyebrow">Plan clearly. Start confidently.</div>
+        <h1>Your day,<br><em>in focus.</em></h1>
+        <p class="lede">One concise morning briefing for the updates worth your attention—from the forecast and sports to headlines and the work ahead.</p>
+        <div class="hero-actions"><a class="btn primary" href="#sample">Explore the digest ↓</a><a class="btn secondary" href="#how">How it works</a></div>
+        <div class="note">A concept preview · Personal sources appear only when connected and authorized.</div>
+      </div>
+      <div class="preview" aria-label="Illustrative daily digest preview">
+        <div class="preview-top"><strong>☀️ Your Daily Digest</strong><span class="time">MORNING EDITION</span></div>
+        <div class="item"><div class="ico">🗓️</div><div><b>Today’s schedule</b><small>Meetings, priorities & preparation</small></div><span class="arrow">01</span></div>
+        <div class="item"><div class="ico">🌤️</div><div><b>Weather in Las Vegas</b><small>Forecast, conditions & alerts</small></div><span class="arrow">02</span></div>
+        <div class="item"><div class="ico">🏀</div><div><b>Sports snapshot</b><small>Scores, schedules & team updates</small></div><span class="arrow">03</span></div>
+        <div class="item"><div class="ico">📰</div><div><b>Top stories</b><small>National & international headlines</small></div><span class="arrow">04</span></div>
+        <div class="item"><div class="ico">📈</div><div><b>Business & technology</b><small>One meaningful development to know</small></div><span class="arrow">05</span></div>
+        <div class="preview-foot">A focused start, without the endless app-hopping.</div>
+      </div>
+    </section>
+  </div>
+</header>
+<main class="wrap">
+  <section id="how">
+    <div class="section-kicker">The idea</div><h2>Less checking.<br>More knowing.</h2>
+    <p class="intro">Morning Signal brings useful information together in one readable update. It puts urgent and actionable items first, keeps the noise down, and makes it easier to decide what deserves your attention.</p>
+    <div class="grid">
+      <article class="card"><div class="symbol">🗓️</div><h3>Know what’s ahead</h3><p>Connect a calendar to see upcoming commitments, potential conflicts, and what may need preparation.</p></article>
+      <article class="card"><div class="symbol">🌎</div><h3>Stay in the loop</h3><p>Get a quick look at local weather, sports, major headlines, and selected business or technology news.</p></article>
+      <article class="card"><div class="symbol">⚡</div><h3>Start with priorities</h3><p>Surface new, time-sensitive information first, with links so you can explore the stories that matter.</p></article>
+    </div>
+  </section>
+  <section class="sample" id="sample">
+    <div class="sample-head"><div><div class="section-kicker">A sample layout</div><h2 style="font-size:2rem;margin-bottom:0">Your morning, at a glance</h2></div><span class="pill">Illustrative preview</span></div>
+    <div class="sample-grid">
+      <div class="sample-box"><h3>🌤️ Local conditions</h3><p>Today’s forecast, notable changes, and weather alerts for the Las Vegas area.</p></div>
+      <div class="sample-box"><h3>🏟️ Sports watch</h3><p>Recent results, upcoming games, and important updates for area teams.</p></div>
+      <div class="sample-box"><h3>🗞️ What matters today</h3><p>A short selection of significant national and global stories, with source links.</p></div>
+      <div class="sample-box"><h3>💡 Work & ideas</h3><p>Technology and business developments, plus calendar priorities when a calendar is connected.</p></div>
+    </div>
+    <p class="disclaimer">This page is a project showcase, not a live news feed. The preview contains no live scores, current forecasts, stock quotes, or personal calendar data.</p>
+  </section>
+  <section style="padding:64px 0 10px">
+    <div class="section-kicker">Beyond the morning</div><h2>One small automation.<br>A more organized day.</h2>
+    <p class="intro">The same approach can support meeting preparation, project check-ins, deadline reminders, research roundups, and weekly planning—bringing the right information together when it is useful.</p>
+  </section>
+</main>
+<footer><div class="wrap foot"><div><strong>MORNING SIGNAL</strong><br>Plan. Prepare. Stay ahead.</div><div>Designed as an AI daily-digest project showcase.<br>Connect only the apps and sources you choose.</div></div></footer>
+</body>
+</html>
