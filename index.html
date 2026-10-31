@@ -2,101 +2,212 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#101a35">
-<meta name="description" content="Morning Signal — a concise AI-powered morning briefing for your schedule, local weather, sports, and the stories that matter.">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Morning Signal — Your day, in focus.</title>
+<meta name="description" content="Morning Signal — a concise AI-powered morning briefing for your schedule, local weather, sports, and the stories that matter.">
+<meta name="theme-color" content="#101a35">
+<meta property="og:title" content="Morning Signal — Your day, in focus.">
+<meta property="og:description" content="One concise morning briefing for the updates worth your attention.">
+<meta property="og:image" content="https://shireenkayal.github.io/morning-signal/morning-signal-preview.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,600;0,700;1,600;1,700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
-:root{--navy:#101a35;--ink:#17213c;--muted:#64708b;--cyan:#24d6e8;--gold:#ffc94a;--paper:#f5f7fc;--line:#e7ebf4}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.55 Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif}
-a{color:inherit}.wrap{width:min(1120px,calc(100% - 40px));margin:auto}
-header{background:var(--navy);color:white;overflow:hidden;position:relative}
-header:before{content:"";position:absolute;width:580px;height:580px;border-radius:50%;background:radial-gradient(circle,#1b6e91 0,rgba(36,214,232,.12) 42%,transparent 70%);right:-100px;top:-270px}
-nav{height:82px;display:flex;align-items:center;justify-content:space-between;position:relative;z-index:1}
-.brand{font-weight:850;letter-spacing:-.04em;font-size:1.2rem}.brand span{color:var(--cyan)}
-.navtag{border:1px solid #46516b;border-radius:999px;padding:8px 14px;color:#d9e4fa;font-size:.82rem}
-.hero{position:relative;z-index:1;padding:72px 0 88px;display:grid;grid-template-columns:1.05fr .95fr;gap:54px;align-items:center}
-.eyebrow{color:var(--cyan);font-size:.78rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase}
-h1{font-size:clamp(3rem,6vw,5.2rem);line-height:.99;letter-spacing:-.065em;margin:18px 0 22px;max-width:650px}
-h1 em{font-style:normal;color:var(--cyan)}
-.lede{font-size:1.12rem;color:#c5cee2;max-width:530px}
-.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
-.btn{display:inline-flex;align-items:center;justify-content:center;padding:13px 19px;border-radius:12px;text-decoration:none;font-weight:750}
-.primary{background:var(--cyan);color:#071629}.secondary{border:1px solid #56617a;color:white}
-.note{font-size:.82rem;color:#aab6cf;margin-top:14px}
-.preview{background:#fff;color:var(--ink);border:1px solid #dce5f2;border-radius:22px;padding:22px;box-shadow:0 25px 80px #050b1e88;transform:rotate(1deg)}
-.preview-top{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line);padding-bottom:16px}
-.preview-top strong{font-size:1.1rem}.time{font-size:.8rem;color:var(--muted)}
-.item{display:grid;grid-template-columns:42px 1fr auto;gap:12px;align-items:center;padding:15px 0;border-bottom:1px solid var(--line)}
-.item:last-child{border:0}.ico{width:40px;height:40px;border-radius:12px;background:#e9faff;display:grid;place-items:center;font-size:1.2rem}
-.item b{display:block;font-size:.92rem}.item small{color:var(--muted)}.arrow{color:#1689a8;font-size:.82rem}
-.preview-foot{background:#f1fbfd;border-radius:12px;padding:12px;margin-top:12px;font-size:.82rem;color:#286174;text-align:center}
-main{padding:76px 0}.section-kicker{color:#1689a8;font-size:.76rem;font-weight:850;letter-spacing:.15em;text-transform:uppercase}
-h2{font-size:clamp(2rem,4vw,3rem);line-height:1.08;letter-spacing:-.045em;margin:10px 0 14px}
-.intro{max-width:650px;color:var(--muted)}
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:34px}
-.card{background:white;border:1px solid var(--line);border-radius:18px;padding:23px}
-.card .symbol{font-size:1.6rem}.card h3{margin:12px 0 5px}.card p{margin:0;color:var(--muted);font-size:.93rem}
-.sample{margin-top:64px;background:white;border:1px solid var(--line);border-radius:22px;padding:clamp(22px,4vw,38px)}
-.sample-head{display:flex;justify-content:space-between;gap:16px;align-items:center;flex-wrap:wrap}
-.pill{font-size:.78rem;font-weight:750;background:#e9fbf6;color:#16765f;border-radius:999px;padding:7px 11px}
-.sample-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:22px}
-.sample-box{background:#f7f9fd;border-radius:14px;padding:18px}.sample-box h3{margin:0 0 8px;font-size:1rem}.sample-box p{margin:0;color:var(--muted);font-size:.9rem}
-.disclaimer{font-size:.82rem;color:var(--muted);margin-top:18px}
-footer{background:var(--navy);color:#d5deef;padding:34px 0}
-.foot{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font-size:.86rem}.foot strong{color:white}
-@media(max-width:780px){.hero{grid-template-columns:1fr;padding:55px 0 65px;gap:35px}.preview{transform:none}.grid{grid-template-columns:1fr}.sample-grid{grid-template-columns:1fr}main{padding:55px 0}}
+:root{--bg:#101a35;--surface:#1a2850;--surface2:#223163;--line:#344470;--text:#fff7ec;--muted:#b0bad6;--accent:#ffb547;--ink:#101a35;color-scheme:dark;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:light){:root:not([data-theme="dark"]){--bg:#f3f5fb;--surface:#ffffff;--surface2:#e8ecf7;--line:#d0d7ea;--text:#101a35;--muted:#4b5a85;--accent:#a85f00;--ink:#ffffff;color-scheme:light}}
+:root[data-theme="light"]{--bg:#f3f5fb;--surface:#ffffff;--surface2:#e8ecf7;--line:#d0d7ea;--text:#101a35;--muted:#4b5a85;--accent:#a85f00;--ink:#ffffff;color-scheme:light}
+:root[data-theme="dark"]{--bg:#101a35;--surface:#1a2850;--surface2:#223163;--line:#344470;--text:#fff7ec;--muted:#b0bad6;--accent:#ffb547;--ink:#101a35;color-scheme:dark}
+html{scroll-behavior:smooth;scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font:400 17px/1.6 Poppins,system-ui,-apple-system,"Segoe UI",sans-serif}
+.wrap{max-width:1100px;margin:0 auto;padding:0 24px}
+h1,h2,h3{font-family:Lora,Georgia,"Times New Roman",serif;line-height:1.1;margin:0}
+p{margin:0}
+.muted{color:var(--muted)}
+button{font:inherit;color:inherit;cursor:pointer}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:8px}
+nav{display:flex;align-items:center;justify-content:space-between;padding:22px 0}
+.brand{display:flex;align-items:center;gap:10px;font-weight:500;font-size:19px}
+.sun{width:18px;height:18px;border-radius:50%;background:var(--accent)}
+.navr{display:flex;gap:10px;align-items:center}
+.ghost{background:none;border:1px solid var(--line);border-radius:999px;padding:8px 16px;font-size:15px;color:var(--text);text-decoration:none}
+.ghost:hover{border-color:var(--accent)}
+.hero{display:grid;grid-template-columns:1.05fr 1fr;gap:56px;align-items:center;padding:56px 0 88px}
+.hero h1{font-size:clamp(46px,7vw,92px);font-weight:700}
+.hero h1 em{color:var(--accent);font-weight:700}
+.lead{font-size:20px;color:var(--muted);margin:24px 0 32px;max-width:30em;font-weight:300}
+.cta{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-block;background:var(--accent);color:var(--ink);border:0;border-radius:999px;padding:13px 26px;font-weight:500;text-decoration:none}
+.btn:hover{filter:brightness(1.08)}
+.note{font-size:14px;color:var(--muted);margin-top:22px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:24px;padding:26px}
+.card-h{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding-bottom:16px;border-bottom:1px solid var(--line)}
+.card-h h3{font-family:Poppins,sans-serif;font-size:21px;font-weight:500}
+.tag{font-size:13px;color:var(--accent);font-weight:500}
+.rows{list-style:none;margin:0;padding:0}
+.row{display:flex;align-items:center;gap:6px;border-bottom:1px solid var(--line)}
+.row:last-child{border-bottom:0}
+.pick{flex:1;display:flex;gap:16px;align-items:center;text-align:left;background:none;border:0;padding:14px 8px;border-radius:12px;min-width:0}
+.pick:hover{background:var(--surface2)}
+.pick[aria-pressed="true"]{background:var(--surface2)}
+.num{color:var(--accent);font-weight:500;font-size:15px;width:24px;flex:none}
+.pick b{display:block;font-weight:500;font-size:17px}
+.pick small{display:block;color:var(--muted);font-size:14px;font-weight:300}
+.row.off .pick{opacity:.45}
+.sw{position:relative;flex:none;width:44px;height:26px}
+.sw input{position:absolute;inset:0;opacity:0;margin:0;cursor:pointer;width:100%;height:100%}
+.sw span{position:absolute;inset:0;border-radius:999px;background:var(--line);transition:background .2s;pointer-events:none}
+.sw span::after{content:"";position:absolute;top:3px;left:3px;width:20px;height:20px;border-radius:50%;background:var(--text);transition:transform .2s}
+.sw input:checked + span{background:var(--accent)}
+.sw input:checked + span::after{transform:translateX(18px);background:var(--ink)}
+.sw input:focus-visible + span{outline:3px solid var(--accent);outline-offset:3px}
+section{padding:72px 0}
+.kicker{color:var(--accent);font-weight:500;font-size:15px;margin-bottom:10px}
+h2{font-size:clamp(32px,4.6vw,52px);font-weight:700;margin-bottom:18px}
+.sub{color:var(--muted);max-width:38em;font-weight:300;font-size:18px}
+.sample{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:36px;align-items:start}
+.detail h3{font-size:30px;font-weight:700;margin:6px 0 14px}
+.detail ul{margin:0;padding-left:20px;color:var(--muted)}
+.detail li{margin:8px 0}
+.detail .need{margin-top:16px;font-size:14px;color:var(--accent)}
+.build{display:flex;flex-wrap:wrap;gap:14px 24px;align-items:center;justify-content:space-between;margin-top:20px;padding-top:18px;border-top:1px solid var(--line)}
+select{font:inherit;background:var(--surface2);color:var(--text);border:1px solid var(--line);border-radius:10px;padding:8px 12px}
+.summary{font-size:15px;color:var(--muted)}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:36px;list-style:none;padding:0}
+.steps li{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:24px}
+.steps .num{display:block;width:auto;margin-bottom:10px}
+.steps h3{font-size:24px;margin-bottom:8px}
+.steps p{color:var(--muted);font-size:15px}
+.more{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
+.chip{background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:8px 16px;font-size:15px}
+footer{border-top:1px solid var(--line);padding:36px 0 48px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;color:var(--muted);font-size:14px}
+footer b{color:var(--text);font-weight:500;font-size:16px}
+.toast{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom,0px));transform:translate(-50%,20px);background:var(--accent);color:var(--ink);padding:10px 18px;border-radius:999px;font-size:15px;font-weight:500;opacity:0;pointer-events:none;transition:opacity .2s,transform .2s}
+.toast.on{opacity:1;transform:translate(-50%,0)}
+@media (max-width:860px){.hero,.sample,.steps{grid-template-columns:1fr}.hero{gap:36px;padding-top:24px}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
 </style>
 </head>
 <body>
-<header>
-  <div class="wrap">
-    <nav><div class="brand">MORNING <span>SIGNAL</span></div><div class="navtag">Your AI-powered daily briefing</div></nav>
-    <section class="hero">
-      <div>
-        <div class="eyebrow">Plan clearly. Start confidently.</div>
-        <h1>Your day,<br><em>in focus.</em></h1>
-        <p class="lede">One concise morning briefing for the updates worth your attention—from the forecast and sports to headlines and the work ahead.</p>
-        <div class="hero-actions"><a class="btn primary" href="#sample">Explore the digest ↓</a><a class="btn secondary" href="#how">How it works</a></div>
-        <div class="note">A concept preview · Personal sources appear only when connected and authorized.</div>
-      </div>
-      <div class="preview" aria-label="Illustrative daily digest preview">
-        <div class="preview-top"><strong>☀️ Your Daily Digest</strong><span class="time">MORNING EDITION</span></div>
-        <div class="item"><div class="ico">🗓️</div><div><b>Today’s schedule</b><small>Meetings, priorities & preparation</small></div><span class="arrow">01</span></div>
-        <div class="item"><div class="ico">🌤️</div><div><b>Weather in Las Vegas</b><small>Forecast, conditions & alerts</small></div><span class="arrow">02</span></div>
-        <div class="item"><div class="ico">🏀</div><div><b>Sports snapshot</b><small>Scores, schedules & team updates</small></div><span class="arrow">03</span></div>
-        <div class="item"><div class="ico">📰</div><div><b>Top stories</b><small>National & international headlines</small></div><span class="arrow">04</span></div>
-        <div class="item"><div class="ico">📈</div><div><b>Business & technology</b><small>One meaningful development to know</small></div><span class="arrow">05</span></div>
-        <div class="preview-foot">A focused start, without the endless app-hopping.</div>
-      </div>
-    </section>
+<div class="wrap">
+<nav>
+  <div class="brand"><span class="sun"></span>Morning Signal</div>
+  <div class="navr">
+    <button class="ghost" id="share" type="button">Share</button>
+    <button class="ghost" id="theme" type="button" aria-label="Switch between light and dark">Theme</button>
+  </div>
+</nav>
+
+<header class="hero">
+  <div>
+    <h1>Your day,<br><em>in focus.</em></h1>
+    <p class="lead">One concise morning briefing for the updates worth your attention—from the forecast and sports to headlines and the work ahead.</p>
+    <div class="cta"><a class="btn" href="#sample">Build your digest</a><a class="ghost" href="#how">How it works</a></div>
+    <p class="note">A concept preview. Personal sources appear only when connected and authorized.</p>
+  </div>
+  <div class="card" aria-label="Daily digest preview">
+    <div class="card-h"><h3>Your Daily Digest</h3><span class="tag">Morning edition</span></div>
+    <ul class="rows" id="heroRows"></ul>
   </div>
 </header>
-<main class="wrap">
-  <section id="how">
-    <div class="section-kicker">The idea</div><h2>Less checking.<br>More knowing.</h2>
-    <p class="intro">Morning Signal brings useful information together in one readable update. It puts urgent and actionable items first, keeps the noise down, and makes it easier to decide what deserves your attention.</p>
-    <div class="grid">
-      <article class="card"><div class="symbol">🗓️</div><h3>Know what’s ahead</h3><p>Connect a calendar to see upcoming commitments, potential conflicts, and what may need preparation.</p></article>
-      <article class="card"><div class="symbol">🌎</div><h3>Stay in the loop</h3><p>Get a quick look at local weather, sports, major headlines, and selected business or technology news.</p></article>
-      <article class="card"><div class="symbol">⚡</div><h3>Start with priorities</h3><p>Surface new, time-sensitive information first, with links so you can explore the stories that matter.</p></article>
+
+<section id="sample">
+  <p class="kicker">A sample layout</p>
+  <h2>Your morning, at a glance</h2>
+  <p class="sub">Tap a section to preview it. Switch sections on or off to shape your briefing.</p>
+  <div class="sample">
+    <div class="card">
+      <ul class="rows" id="rows"></ul>
+      <div class="build">
+        <label>Deliver at <select id="time"><option>6:00 AM</option><option selected>7:00 AM</option><option>8:00 AM</option></select></label>
+        <p class="summary" id="summary" aria-live="polite"></p>
+      </div>
     </div>
-  </section>
-  <section class="sample" id="sample">
-    <div class="sample-head"><div><div class="section-kicker">A sample layout</div><h2 style="font-size:2rem;margin-bottom:0">Your morning, at a glance</h2></div><span class="pill">Illustrative preview</span></div>
-    <div class="sample-grid">
-      <div class="sample-box"><h3>🌤️ Local conditions</h3><p>Today’s forecast, notable changes, and weather alerts for the Las Vegas area.</p></div>
-      <div class="sample-box"><h3>🏟️ Sports watch</h3><p>Recent results, upcoming games, and important updates for area teams.</p></div>
-      <div class="sample-box"><h3>🗞️ What matters today</h3><p>A short selection of significant national and global stories, with source links.</p></div>
-      <div class="sample-box"><h3>💡 Work & ideas</h3><p>Technology and business developments, plus calendar priorities when a calendar is connected.</p></div>
-    </div>
-    <p class="disclaimer">This page is a project showcase, not a live news feed. The preview contains no live scores, current forecasts, stock quotes, or personal calendar data.</p>
-  </section>
-  <section style="padding:64px 0 10px">
-    <div class="section-kicker">Beyond the morning</div><h2>One small automation.<br>A more organized day.</h2>
-    <p class="intro">The same approach can support meeting preparation, project check-ins, deadline reminders, research roundups, and weekly planning—bringing the right information together when it is useful.</p>
-  </section>
-</main>
-<footer><div class="wrap foot"><div><strong>MORNING SIGNAL</strong><br>Plan. Prepare. Stay ahead.</div><div>Designed as an AI daily-digest project showcase.<br>Connect only the apps and sources you choose.</div></div></footer>
+    <div class="card detail" id="detail" aria-live="polite"></div>
+  </div>
+  <p class="note">Illustrative preview. This page is a project showcase, not a live news feed. It contains no live scores, current forecasts, stock quotes, or personal calendar data.</p>
+</section>
+
+<section id="how">
+  <p class="kicker">The idea</p>
+  <h2>Less checking. More knowing.</h2>
+  <p class="sub">Morning Signal brings useful information together in one readable update. It puts urgent and actionable items first, keeps the noise down, and makes it easier to decide what deserves your attention.</p>
+  <ol class="steps">
+    <li><span class="num">01</span><h3>Know what’s ahead</h3><p>Connect a calendar to see upcoming commitments, potential conflicts, and what may need preparation.</p></li>
+    <li><span class="num">02</span><h3>Stay in the loop</h3><p>Get a quick look at local weather, sports, major headlines, and selected business or technology news.</p></li>
+    <li><span class="num">03</span><h3>Start with priorities</h3><p>Surface new, time-sensitive information first, with links so you can explore the stories that matter.</p></li>
+  </ol>
+</section>
+
+<section>
+  <p class="kicker">Beyond the morning</p>
+  <h2>One small automation. A more organized day.</h2>
+  <p class="sub">The same approach can support meeting preparation, project check-ins, deadline reminders, research roundups, and weekly planning—bringing the right information together when it is useful.</p>
+  <div class="more"><span class="chip">Meeting prep</span><span class="chip">Project check-ins</span><span class="chip">Deadline reminders</span><span class="chip">Research roundups</span><span class="chip">Weekly planning</span></div>
+</section>
+
+<footer>
+  <div><b>Morning Signal</b><br>Plan. Prepare. Stay ahead.</div>
+  <div>Designed as an AI daily-digest project showcase.<br>Connect only the apps and sources you choose.</div>
+</footer>
+</div>
+<div class="toast" id="toast" role="status"></div>
+
+<script>
+var DATA=[
+ {id:"schedule",t:"Today’s schedule",s:"Meetings, priorities & preparation",d:["Today’s meetings, in order","Conflicts flagged before they catch you","A prep note for the meeting that needs one"],need:"Needs a connected calendar"},
+ {id:"weather",t:"Weather in Las Vegas",s:"Forecast, conditions & alerts",d:["Today’s high, low, and chance of rain","Alerts for heat, wind, or storms","A line on what changes by evening"]},
+ {id:"sports",t:"Sports snapshot",s:"Scores, schedules & team updates",d:["Final scores from your teams’ last games","Who plays today, and when","Roster news worth knowing"]},
+ {id:"stories",t:"Top stories",s:"National & international headlines",d:["Three to five headlines, national and global","One plain sentence each, with a source link","Breaking items placed first"]},
+ {id:"business",t:"Business & technology",s:"One meaningful development to know",d:["One development in business or tech","Why it matters, in plain language","A link to the full story"]}
+];
+var state={sel:"schedule",on:{},time:"7:00 AM"};
+DATA.forEach(function(x){state.on[x.id]=true});
+try{var saved=JSON.parse(localStorage.getItem("ms-state")||"null");
+ if(saved&&saved.on){DATA.forEach(function(x){if(typeof saved.on[x.id]==="boolean")state.on[x.id]=saved.on[x.id]});if(saved.time)state.time=saved.time}}catch(e){}
+
+function save(){try{localStorage.setItem("ms-state",JSON.stringify({on:state.on,time:state.time}))}catch(e){}}
+function toast(m){var t=document.getElementById("toast");t.textContent=m;t.classList.add("on");clearTimeout(toast.h);toast.h=setTimeout(function(){t.classList.remove("on")},1800)}
+
+function rowHTML(x,i,withSwitch){
+ return '<li class="row'+(state.on[x.id]?'':' off')+'"><button type="button" class="pick" data-id="'+x.id+'" aria-pressed="'+(state.sel===x.id)+'"><span class="num">0'+(i+1)+'</span><span><b>'+x.t+'</b><small>'+x.s+'</small></span></button>'+
+ (withSwitch?'<label class="sw"><input type="checkbox" data-sw="'+x.id+'" aria-label="Include '+x.t+'"'+(state.on[x.id]?' checked':'')+'><span></span></label>':'')+'</li>';
+}
+function render(){
+ document.getElementById("heroRows").innerHTML=DATA.map(function(x,i){return rowHTML(x,i,false)}).join("");
+ document.getElementById("rows").innerHTML=DATA.map(function(x,i){return rowHTML(x,i,true)}).join("");
+ var x=DATA.filter(function(d){return d.id===state.sel})[0];
+ document.getElementById("detail").innerHTML='<p class="tag">'+(state.on[x.id]?'Included in your briefing':'Not included')+'</p><h3>'+x.t+'</h3><ul>'+x.d.map(function(l){return'<li>'+l+'</li>'}).join("")+'</ul>'+(x.need?'<p class="need">'+x.need+'</p>':'');
+ var n=DATA.filter(function(d){return state.on[d.id]}).length;
+ document.getElementById("summary").textContent=n?('Your '+state.time+' briefing includes '+n+' of '+DATA.length+' sections.'):'Switch on at least one section to build your briefing.';
+ document.getElementById("time").value=state.time;
+}
+document.addEventListener("click",function(e){
+ var p=e.target.closest(".pick");if(p){state.sel=p.getAttribute("data-id");render()}
+});
+document.addEventListener("change",function(e){
+ var id=e.target.getAttribute&&e.target.getAttribute("data-sw");
+ if(id){state.on[id]=e.target.checked;state.sel=id;save();render()}
+ if(e.target.id==="time"){state.time=e.target.value;save();render()}
+});
+
+document.getElementById("share").addEventListener("click",function(){
+ var url=location.href.split("#")[0];
+ if(navigator.share){navigator.share({title:document.title,url:url}).catch(function(){})}
+ else if(navigator.clipboard){navigator.clipboard.writeText(url).then(function(){toast("Link copied")},function(){toast("Copy the address bar link")})}
+ else{toast("Copy the address bar link")}
+});
+
+var root=document.documentElement;
+function curTheme(){var t=root.getAttribute("data-theme");if(t)return t;return window.matchMedia&&matchMedia("(prefers-color-scheme: light)").matches?"light":"dark"}
+try{var st=localStorage.getItem("ms-theme");if(st==="light"||st==="dark")root.setAttribute("data-theme",st)}catch(e){}
+document.getElementById("theme").addEventListener("click",function(){
+ var n=curTheme()==="dark"?"light":"dark";root.setAttribute("data-theme",n);
+ try{localStorage.setItem("ms-theme",n)}catch(e){}
+});
+render();
+</script>
 </body>
 </html>
